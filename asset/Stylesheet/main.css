@@ -1,0 +1,1882 @@
+/* ==========================================================================
+	Global Settings
+========================================================================== */
+
+/*
+* Boxsizing set to border box http://css-tricks.com/box-sizing/
+*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection rule sets have to be separate.
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+* Body settings, change it as required
+*/
+
+body {
+    font-family: 'Hind Siliguri', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.4;
+    margin: 0px;
+}
+
+/*
+* Headings
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    margin-top: 0px;
+}
+
+/*
+* Paragraphs
+*/
+
+p {
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+/*
+* Links
+*/
+
+a {
+    color: #2ba6cb;
+    text-decoration: none;
+    line-height: inherit;
+}
+
+a:hover {
+    /*color: #2795b6;*/
+}
+
+a:focus {
+    color: #2ba6cb;
+    outline: none;
+}
+
+p a,
+p a:visited {
+    line-height: inherit;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+* Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+*/
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+}
+
+/*
+* Remove default fieldset styles.
+*/
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+	Helper classes
+========================================================================== */
+
+/*
+* Floats
+*/
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*
+* Text Alignment
+*/
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*
+* Image Alignment
+*/
+
+img.alignleft {
+    float: left;
+    margin: 0 10px 10px 0;
+    display: inline;
+}
+
+img.alignright {
+    float: right;
+    margin: 0 0px 10px 10px;
+    display: inline;
+}
+
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+/*
+* Image replacement
+*/
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+* Hide from both screenreaders and browsers: h5bp.com/u
+*/
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+* Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element to be focusable
+* when navigated to via the keyboard: h5bp.com/p
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+* Hide visually and from screenreaders, but maintain layout
+*/
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*/
+
+/*
+* More semantic version as described in http://css-tricks.com/snippets/css/clear-fix/
+*/
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*
+* overflow method for clearing floats
+*/
+
+.floatbox {
+    overflow: hidden;
+}
+
+/*
+* older method of adding empty tags for clearing
+*/
+
+.clear {
+    clear: both;
+    height: 1px;
+    line-height: 1px;
+}
+
+/*
+* Chromeframe
+*/
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/*
+* Other
+*/
+
+/* ==========================================================================
+    Layout
+    
+========================================================================== */
+
+.global_sprite {
+    background-image: url("../image/global_sprite.png")
+}
+
+/* Container ---------------------- */
+
+#container {}
+
+.row {
+    display: flex;
+}
+
+.logo {
+    display: flex;
+}
+
+#topbar {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0px;
+    color: #738694;
+    z-index: 100;
+}
+
+#topbar .logo a {
+    display: block;
+    padding: 0px 10px 7px 20px;
+}
+
+#topbar .logo .logo-image {
+    height: 53px;
+    width: 110px;
+    background-position: -116px -47px;
+    background-size: 250%;
+}
+
+#topbar .logo span {
+    margin: 16px 0px 0px 16px;
+    font-size: 15px;
+}
+
+#topbar ul {
+    color: white;
+    position: absolute;
+    left: 736px;
+    top: 7px;
+    margin: 0px;
+}
+
+@media (max-width: 1355px) {
+    #topbar ul {
+        color: white;
+        position: absolute;
+        left: 566px;
+        top: 7px;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 1220px) {
+    #topbar ul {
+        color: white;
+        position: absolute;
+        left: 580px;
+        top: 7px;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 1210px) {
+    #topbar ul {
+        color: white;
+        position: absolute;
+        left: 500px;
+        top: 7px;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 1130px) {
+    #topbar ul {
+        display: none;
+    }
+}
+
+#topbar ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+#topbar ul li a {
+    color: #738694;
+}
+
+#topbar ul li a i {
+    color: #000;
+}
+
+#topbar ul li img {
+    height: 40px;
+    width: 40px;
+}
+
+/*------------- Header -----*/
+
+#header {
+    top: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: red;
+}
+
+#header .navbar ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+#header .navbar ul li {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 32px;
+    height: 30px;
+}
+
+#header .navbar .Delhi::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 41px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar ul li a {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 30px;
+    padding: 11px 0px 11px 0px;
+}
+
+#header .navbar .Delhi {
+    position: relative;
+}
+
+#header .navbar .dropdown {
+    position: absolute;
+    width: 200px;
+    height: 370px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    display: none;
+}
+
+#header .navbar .Delhi:hover .dropdown {
+    display: block
+}
+
+#header .navbar .Delhi .dropdown ul {
+    display: block;
+}
+
+#header .navbar .Delhi .dropdown li {
+    margin-bottom: 0px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Delhi .dropdown li a {
+    color: black;
+}
+
+#header .navbar .Delhi .dropdown li a:hover {
+    color: #EE2E24;
+}
+
+#header .navbar .Gurgaon::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 68px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Gurgaon {
+    position: relative;
+}
+
+#header .navbar .Gurgaon .dropdown2 {
+    position: absolute;
+    width: 143px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Gurgaon:hover .dropdown2 {
+    display: block
+}
+
+#header .navbar .Gurgaon .dropdown2 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Gurgaon .dropdown2 li a {
+    color: #000;
+}
+
+#header .navbar .Gurgaon .dropdown2 li a:hover {
+    color: red;
+}
+
+#header .navbar .Nodia::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 44px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Nodia {
+    position: relative;
+}
+
+#header .navbar .Nodia .dropdown3 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Nodia:hover .dropdown3 {
+    display: block
+}
+
+#header .navbar .Nodia .dropdown3 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Nodia .dropdown3 li a {
+    color: #000;
+}
+
+#header .navbar .Nodia .dropdown3 li a:hover {
+    color: red;
+}
+
+#header .navbar .Mumbai::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 55px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Mumbai {
+    position: relative;
+}
+
+#header .navbar .Mumbai .dropdown4 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Mumbai:hover .dropdown4 {
+    display: block
+}
+
+#header .navbar .Mumbai .dropdown4 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Mumbai .dropdown4 li a {
+    color: #000;
+}
+
+#header .navbar .Mumbai .dropdown4 li a:hover {
+    color: red;
+}
+
+#header .navbar .Bangalore::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 80px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Bangalore {
+    position: relative;
+}
+
+#header .navbar .Bangalore .dropdown5 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Bangalore:hover .dropdown5 {
+    display: block
+}
+
+#header .navbar .Bangalore .dropdown5 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Bangalore .dropdown5 li a {
+    color: #000;
+}
+
+#header .navbar .Bangalore .dropdown5 li a:hover {
+    color: red;
+}
+
+#header .navbar .Goa::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 36px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Goa {
+    position: relative;
+}
+
+#header .navbar .Goa .dropdown6 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Goa:hover .dropdown6 {
+    display: block
+}
+
+#header .navbar .Goa .dropdown6 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Goa .dropdown6 li a {
+    color: #000;
+}
+
+#header .navbar .Goa .dropdown6 li a:hover {
+    color: red;
+}
+
+#header .navbar .Chennai::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 62px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Chennai {
+    position: relative;
+}
+
+#header .navbar .Chennai .dropdown7 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Chennai:hover .dropdown7 {
+    display: block
+}
+
+#header .navbar .Chennai .dropdown7 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Chennai .dropdown7 li a {
+    color: #000;
+}
+
+#header .navbar .Chennai .dropdown7 li a:hover {
+    color: red;
+}
+
+#header .navbar .Heyderabad::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 90px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .Heyderabad {
+    position: relative;
+}
+
+#header .navbar .Heyderabad .dropdown8 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .Heyderabad:hover .dropdown8 {
+    display: block
+}
+
+#header .navbar .Heyderabad .dropdown8 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .Heyderabad .dropdown8 li a {
+    color: #000;
+}
+
+#header .navbar .Heyderabad .dropdown8 li a:hover {
+    color: red;
+}
+
+#header .navbar .kolkata::before {
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    height: 6px;
+    position: absolute;
+    margin-left: 59px;
+    top: 7px;
+    color: white;
+    transform: rotate(135deg);
+    transition: .3s linear all;
+    vertical-align: top;
+    width: 6px;
+}
+
+#header .navbar .kolkata {
+    position: relative;
+}
+
+#header .navbar .kolkata .dropdown9 {
+    position: absolute;
+    width: 153px;
+    height: 332px;
+    margin: 0px;
+    ;
+    background-color: #E5E5E5;
+    top: 29px;
+    left: 0px;
+    background-color: white;
+    position: absolute;
+    display: none;
+}
+
+#header .navbar .kolkata:hover .dropdown9 {
+    display: block
+}
+
+#header .navbar .kolkata .dropdown9 li {
+    margin-bottom: 13px;
+    margin-left: -24px;
+    display: block;
+    font-size: 12px;
+}
+
+#header .navbar .kolkata .dropdown9 li a {
+    color: #000;
+}
+
+#header .navbar .kolkata .dropdown9 li a:hover {
+    color: red;
+}
+
+#header .logo a {}
+
+/* Banner ---------------------- */
+
+#banner {
+    margin-top: 101px;
+    width: 100%;
+    height: 420px;
+    background-image: url("../image/banner2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+#banner .search-baar {
+    position: absolute;
+    display: flex;
+    height: 60px;
+    width: 70%;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 10px;
+    left: 170px;
+    top: 335px;
+    margin: auto;
+}
+
+@media(max-width:1310px) {
+    #banner .search-baar {
+        position: absolute;
+        display: none;
+        height: 60px;
+        width: 70%;
+        background-color: white;
+        border: 1px solid red;
+        border-radius: 10px;
+        left: 170px;
+        top: 335px;
+        margin: auto;
+    }
+}
+
+#banner .search-baar .col-1 {
+    width: 41%;
+}
+
+#banner .search-baar .col-1 input {
+    width: 80%;
+    margin: 20px 0px 0px 9px;
+    font-size: 14px;
+    border: none;
+    outline: 0;
+}
+
+#banner .search-baar .col-1 i {
+    margin-top: 3px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: red;
+}
+
+#banner .search-baar .col-2 {
+    width: 50%;
+    display: flex;
+    position: relative;
+}
+
+#banner .search-baar .col-2 .date {
+    margin-top: 19px;
+    width: 87%;
+}
+
+#banner .search-baar .col-2 span {
+    margin-left: 13px;
+    width: 10px;
+    color: red;
+}
+
+#banner .search-baar .col-2 .date input {
+    margin-left: 15px
+}
+
+#banner .search-baar .col-2 button {
+    top: 12px;
+    left: 411px;
+    position: absolute;
+    width: 115px;
+    height: 36px;
+    color: red;
+    border: 0px solid white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 6px 3px 0 rgba(0, 0, 0, .1);
+    background-color: white;
+    outline: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+#banner .search-baar .col-2 button:hover {
+    background-color: red;
+    color: white;
+}
+
+/* #banner img{
+    margin: 0px;
+    width: 100%;
+    height: 300px;
+} */
+
+/* Content ---------------------- */
+
+#content {}
+
+/* Main ---------------------- */
+
+#main {
+    margin-top: 1px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+#main section {
+    height: 600px;
+    background-size: 100% 100%;
+    margin-bottom: 0px;
+}
+
+#main .section-1 {
+    height: 440px;
+}
+
+@media(max-width:1328px) {
+    #main .section-1 {
+        height: 740px;
+    }
+}
+
+@media(max-width:1176px) {
+    #main .section-1 {
+        height: 140px;
+    }
+}
+
+#main .section-1 .banner {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 106px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1px 3px 0 rgba(0, 0, 0, .1);
+    z-index: 100;
+    display: inline-flex;
+    border-radius: 10px;
+}
+
+@media(max-width:1126px) {
+    #main .section-1 .banner {
+        width: 860px;
+    }
+}
+
+@media(max-width:990px) {
+    #main .section-1 .banner {
+        width: 850px;
+    }
+}
+
+#main .section-1 .banner a {}
+
+#main .section-1 .banner .img_wrapper {}
+
+#main .section-1 .banner .img_wrapper img {
+    height: 80px;
+    width: 75px;
+}
+
+#main .section-1 .banner .text_wrapper {
+    width: 75%;
+    display: flex;
+    height: 20px;
+    margin: 8px 0px 0px 0px;
+}
+
+#main .section-1 .banner .text_wrapper a {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#main .section-1 .banner .text_wrapper h2 {
+    width: 13%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+#main .section-1 .banner .text_wrapper a h3 {
+    margin: 12px 0px 0px 7px;
+    font-size: 27px;
+    font-weight: 500;
+    color: red;
+    width: 80%;
+}
+
+#main .section-1 .banner .text_wrapper a span {
+    color: #738694;
+}
+
+#main .section-1 .banner .button_wrapper {
+    border-radius: 20px;
+    position: relative;
+}
+
+#main .section-1 .banner .button_wrapper button {
+    top: 25px;
+    position: absolute;
+    width: 115px;
+    height: 36px;
+    color: red;
+    border: 0px solid white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 6px 3px 0 rgba(0, 0, 0, .1);
+    background-color: white;
+    outline: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+#main .section-1 .banner .button_wrapper button:hover {
+    background-color: red;
+    color: white;
+}
+
+#main .section-1 .main-content {
+    max-width: 85%;
+    height: 260px;
+    margin: auto;
+}
+
+@media(max-width:1328px) {
+    #main .section-1 .main-content {
+        max-width: 85%;
+        height: 550px;
+        margin: auto;
+    }
+}
+
+@media(max-width:1176px) {
+    #main .section-1 .main-content {
+        max-width: 0px;
+        height: 0px;
+        display: none;
+    }
+}
+
+#main .section-1 .main-content h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    margin: 0px 0px 15px 5px;
+}
+
+#main .section-1 img {
+    height: 200px;
+    width: 265px;
+    margin: 5px;
+}
+
+@media(max-width:1328px) {
+    #main .section-1 img {
+        height: 240px;
+        width: 520px;
+        margin: 5px;
+    }
+}
+
+@media(max-width:1273px) {
+    #main .section-1 img {
+        height: 220px;
+        width: 480px;
+        margin: 5px;
+    }
+}
+
+#main .section-2 {
+    height: 790px;
+    background-color: #2d2d2d;
+    position: relative;
+}
+
+#main .section-2 h2 {
+    width: 100%;
+    height: 38px;
+    text-align: center;
+    top: 60px;
+    bottom: 0px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+#main .section-2 .big-content .Header h2::before {
+    content: '';
+    height: 2px;
+    width: 40px;
+    background-color: #EE2E24;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#main .section-2 .content {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    top: 180px;
+    left: 92px;
+    flex-wrap: wrap;
+}
+
+/* @media(max-width:1310px)
+{
+
+    #main .section-2 .content {
+        width: 90%;
+        margin: auto;
+        display: ;
+        position: absolute;
+        top: 180px;
+        left: 92px;
+        flex-wrap: wrap;
+    }
+
+} */
+
+#main .section-2 .content:hover a {}
+
+#main .section-2 .content a {
+    margin: 10px 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#main .section-2 .content a img {
+    height: 240px;
+    width: 550px;
+    opacity: 0.4;
+    transition: 1s;
+}
+
+@media(max-width:1284px) {
+    #main .section-2 .content a img {
+        width: 485px;
+    }
+}
+
+@media(max-width:1140px) {
+    #main .section-2 .content a img {
+        width: 455px;
+    }
+}
+
+@media(max-width:1080px) {
+    #main .section-2 .content a img {
+        width: 400px;
+    }
+}
+
+@media(max-width:950px) {
+    #main .section-2 .content a img {
+        width: 365px;
+    }
+}
+
+@media(max-width:880px) {
+    #main .section-2 .content a img {
+        width: 320px;
+    }
+}
+
+@media(max-width:780px) {
+    #main .section-2 .content a img {
+        width: 260px;
+    }
+}
+
+#main .section-2 .content a .column {
+    position: absolute;
+    color: #fff;
+    width: 92%;
+    margin: 30px 35px 0px 24px;
+    height: 185px;
+    transition: 1s;
+}
+
+#main .section-2 .content a :hover .column {
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+#main .section-2 .content a :hover img {
+    transform: scale(1.1, 1.1) translateY(00px);
+    background-color: rgb(252, 7, 7);
+}
+
+#main .section-2 .content :hover.Holiday {
+    background-color: rgb(252, 7, 7);
+}
+
+#main .section-2 .content :hover.Business {
+    background-color: rgb(252, 7, 7);
+}
+
+#main .section-2 .content :hover.Malaysia {
+    background-color: rgb(252, 7, 7);
+}
+
+#main .section-2 .content :hover.Hill {
+    background-color: rgb(252, 7, 7);
+}
+
+#main .section-2 .content a .middle {
+    position: absolute;
+    color: #fff;
+    width: 90%;
+    margin: 30px 35px 0px 35px;
+    height: 150px;
+    transition: 0.5s;
+}
+
+#main .section-2 .content a .middle h4 {
+    margin-top: 50px;
+    text-align: center;
+    opacity: 1.1;
+}
+
+#main .section-2 .content a .middle h2 {
+    margin: 0px;
+    height: 25px;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    opacity: none;
+}
+
+#main .section-2 .content a .middle p {
+    margin: 2px 70px;
+    width: 80%;
+    line-height: 24px;
+    display: none;
+    font-size: 16px;
+    padding: 10px 2em 0;
+    color: #fff;
+    text-align: center;
+}
+
+#main .section-2 .content a :hover .middle {
+    transform: scale(1, 1) translateY(-30px);
+}
+
+#main .section-2 .content a :hover p {
+    display: block;
+}
+
+#main .section-3 {
+    background-color: white;
+    height: 1150px;
+    width: 100%;
+}
+
+@media (max-width:1299px) {
+    #main .section-3 {
+        height: 380px;
+    }
+}
+
+#main .section-3 .container {
+    width: 100%;
+    margin: 100px auto;
+}
+
+#main .section-3 .container .header h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2d2d2d;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#main .section-3 .container .header h2::after {
+    content: '';
+    height: 2px;
+    width: 40px;
+    background-color: #EE2E24;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#main .section-3 .container .Middle-grid {
+    width: 85%;
+    height: 270px;
+    margin: 100px auto 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#main .section-3 .container .Middle-grid a {}
+
+#main .section-3 .container .Middle-grid .col-1 {
+    width: 30%;
+    height: 200px;
+    background-image: url("../image/forbes.jpg");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    position: relative
+}
+
+#main .section-3 .container .Middle-grid .col-1 a p {
+    position: absolute;
+    top: 50px;
+    color: #738694;
+    font-style: italic;
+}
+
+#main .section-3 .container .Middle-grid .col-2 {
+    width: 30%;
+    height: 200px;
+    background-size: 90px;
+    background-image: url("../image/hindu.jpg");
+    background-repeat: no-repeat;
+    position: relative
+}
+
+#main .section-3 .container .Middle-grid .col-2 a p {
+    position: absolute;
+    top: 50px;
+    color: #738694;
+    font-style: italic;
+}
+
+#main .section-3 .container .Middle-grid .col-3 {
+    width: 30%;
+    height: 200px;
+    background-size: 190px;
+    background-image: url("../image/tc.png");
+    background-repeat: no-repeat;
+    position: relative
+}
+
+#main .section-3 .container .Middle-grid .col-3 a p {
+    position: absolute;
+    top: 50px;
+    color: #738694;
+    font-style: italic;
+}
+
+#main .section-3 .Middle-fotter {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+@media(max-width:1299px) {
+    #main .section-3 .Middle-fotter {
+        display: none;
+        height: -0px;
+    }
+}
+
+#main .section-3 .Middle-fotter a {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    color: #738694;
+}
+
+#main .section-3 .Middle-fotter a:hover {
+    color: #EE2E24;
+}
+
+#main .section-3 .Middle-grid2 {
+    width: 90%;
+    height: 164px;
+    margin: auto;
+}
+
+#main .section-3 .Middle-grid2 {
+    display: flex;
+}
+
+@media(max-width:1299px) {
+    #main .section-3 .Middle-grid2 {
+        display: none;
+        height: -0px;
+    }
+}
+
+#main .section-3 .Middle-grid2 section {
+    width: 100%;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 {
+    display: flex;
+    height: 164px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 {
+    width: 35%;
+    height: 110px;
+    top: 30px;
+    background-color: white;
+    position: relative;
+    border-right: 1px solid #E5E5E5;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 h2 {
+    margin-left: 19px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .apple {
+    width: 146px;
+    height: 50px;
+    background-color: white;
+    color: white;
+    background-image: url("../image/apple.png");
+    background-position: 7px 7px;
+    background-size: 29px;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 40px;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .apple h4 {
+    color: black;
+    font-size: 10px;
+    margin: 7px 1px 0px 42px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .apple h2 {
+    color: black;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 50px;
+    font-weight: 500;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .playstore {
+    width: 146px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    background-image: url("../image/playstore.png");
+    background-position: 7px 7px;
+    background-size: 29px;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 40px;
+    position: absolute;
+    top: 45px;
+    left: 175px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .playstore h4 {
+    font-size: 10px;
+    color: black;
+    margin: 5px 1px 0px 51px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-1 .playstore h2 {
+    font-size: 15px;
+    color: black;
+    margin-top: 0px;
+    margin-left: 50px;
+    font-weight: 500;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-2 {
+    background-color: white;
+    width: 39%;
+    position: relative;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-2 .left {
+    margin-top: 26px;
+    margin-left: 57px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-2 .right {
+    margin-top: 26px;
+    margin-left: 195px;
+    position: absolute;
+    width: 242px;
+    border-right: 1px solid #E5E5E5;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-2 .left li,
+.right li {
+    font-size: 15px;
+    margin-top: 14px;
+    list-style: none;
+    color: #738694;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-3 {
+    background-color: #fff;
+    width: 30%;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-3 .left {
+    margin-left: 50px;
+}
+
+#main .section-3 .Middle-grid2 .sec-1 .col-3 .left li {
+    list-style: none;
+    margin-top: 17px;
+    font-size: 15px;
+    color: #738694;
+}
+
+#main .section-3 .Middle-fotter2 {
+    width: 90%;
+    height: 60px;
+    margin: auto;
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+@media(max-width:1299px) {
+    #main .section-3 .Middle-fotter2 {
+        display: none;
+        height: -0px;
+    }
+}
+
+#main .section-3 .Middle-fotter2 .info_sec {
+    margin: 21px 0px 0px 0px;
+    position: absolute
+}
+
+#main .section-3 .Middle-fotter2 h4 {
+    width: 50%;
+    height: 30px;
+    display: inline;
+    margin: 75px;
+    font-size: 15px;
+    color: #738694;
+    text-align: center;
+    font-weight: 500;
+}
+
+#main .section-3 .Middle-fotter2 h4 span a {
+    color: red;
+}
+
+#main .section-3 .Middle-Townhouse {
+    width: 95%;
+    height: 165px;
+    margin: auto;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+@media(max-width:1299px) {
+    #main .section-3 .Middle-Townhouse {
+        display: none;
+        height: -0px;
+    }
+}
+
+#main .section-3 .Middle-Townhouse .content {
+    margin: auto;
+    width: 60%;
+    height: 165px;
+}
+
+#main .section-3 .Middle-Townhouse .content .left {
+    width: 65%;
+    height: 150px;
+    position: relative;
+}
+
+#main .section-3 .Middle-Townhouse .content .left img {
+    height: 100px;
+    width: 75px;
+    margin-top: 40px;
+    margin-left: 140px;
+    position: absolute;
+}
+
+#main .section-3 .Middle-Townhouse .content .left h2 {
+    margin-top: 50px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    position: absolute;
+    text-transform: uppercase;
+    left: 230px;
+}
+
+#main .section-3 .Middle-Townhouse .content .left h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 84px;
+    margin-left: 222px;
+    position: absolute;
+    color: #323033;
+}
+
+#main .section-3 .Middle-Townhouse .content .Explore button {
+    font-size: 16px;
+    margin-top: 55px;
+    padding: 16px 35px 16px 35px;
+    border-bottom: none;
+    border-right: none;
+    background-color: red;
+    border-radius: 33px;
+    border-top: none;
+    color: #fff;
+}
+
+#main .section-3 .Middle-Townhouse .content .Explore button:hover {
+    background-color: rgb(211, 11, 11);
+}
+
+#main .section-3 .Middle-fotter3 {
+    width: 90%;
+    height: 165px;
+    margin: auto;
+    position: relative;
+}
+
+@media(max-width:1299px) {
+    #main .section-3 .Middle-fotter3 {
+        display: none;
+        height: -0px;
+    }
+}
+
+#main .section-3 .Middle-fotter3 .content {
+    width: 95%;
+    top: 35px;
+    left: 20px;
+    position: absolute;
+}
+
+#main .section-3 .Middle-fotter3 h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#main .section-3 .Middle-fotter3 ul {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#main .section-3 .Middle-fotter3 ul li {
+    display: inline;
+    font-size: 14px;
+    margin-left: 5px;
+    color: #738694;
+}
+
+#main .section-3 .Middle-fotter3 ul li:hover {
+    color: red;
+}
+
+/* Sidebar ---------------------- */
+
+#sidebar {}
+
+/* Footer ---------------------- */
+
+#footer {
+    width: 100%;
+    height: 75px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+}
+
+#footer .container {
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#footer .left {
+    width: 40%;
+    margin: 5px;
+}
+
+#footer .left i {
+    font-size: 23px;
+    color: #738694;
+    margin: 5px;
+}
+
+#footer .middle {
+    width: 45%;
+    margin: 5px;
+    background-image: url("../image/global_sprite.png");
+    background-size: 212px;
+    background-position: -83px -38px;
+    background-repeat: no-repeat;
+}
+
+#footer .middle h4 {
+    margin-top: 10px;
+    margin-left: 85px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #738694;
+}
+
+#footer .right {
+    width: 22%;
+    margin: 10px;
+}
+
+#footer .right a {
+    color: #738694;
+}
+
+/* ==========================================================================
+	Common Functionalities & UI Elements
+========================================================================== */
+
+/* Section_1 */
